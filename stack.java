@@ -21,22 +21,65 @@ import java.util.InputMismatchException;
 
               }
 
-            public int menu() throws InputMismatchException{
+            public void menu(){
 
-                int choice;
+                int var=0;
+                String data="";
+                boolean flag=true;
+                Scanner scanner=new Scanner(System.in);
+                String answer;
 
-                System.out.println("------Menu------");
-                System.out.println("1.Add element");
-                System.out.println("2.Remove element");
-                System.out.println("3.Check the last element");
-                System.out.println("----------------");
+                do{
+                    try{
 
-                System.out.println("Enter your choice: ");
-                choice=scanner.nextInt();
+                            int choice;
 
-                return choice;
+                            System.out.println("------Menu------");
+                            System.out.println("1.Add element");
+                            System.out.println("2.Remove element");
+                            System.out.println("3.Check the last element");
+                            System.out.println("----------------");
 
-            }
+                            System.out.println("Enter your choice: ");
+                            choice=scanner.nextInt();
+
+                            switch(choice){
+
+                                  case 1: System.out.println("Enter the element to be pushed!");
+                                          data=scanner.next();
+                                          push(data);
+                                          break;
+
+                                  case 2:System.out.println("Element popped: " + pop());
+                                          break;
+
+                                  case 3: peek();
+                                          break;
+
+                                  default: System.out.println("Invalid choice!");
+                                            break;
+
+                              }
+                    }//try ends
+
+                    catch(Exception misMatch){
+
+                                  System.out.println("Exception occured!" + misMatch.getMessage());
+
+                    }//catch ends
+
+                    System.out.println("Do you want to try again?");
+                    answer=scanner.next();
+                    if(answer.equalsIgnoreCase("yes"))
+                            flag=true;
+                    else
+                            flag=false;
+
+                 }while(flag);
+
+                 System.out.println("Okay!Thanks you!");
+
+            }//menu ends
 
             public void push(String data){
 
@@ -66,7 +109,7 @@ import java.util.InputMismatchException;
 
                         if(answer.equalsIgnoreCase("no")){
 
-                            System.out.println("Okay!");
+                            System.out.println("Okay! Thank you!");
 
                             flag=false;
                         }
@@ -108,7 +151,7 @@ import java.util.InputMismatchException;
 
                       if(answer.equalsIgnoreCase("no")){
 
-                        System.out.println("Okay!");
+                        System.out.println("Okay! Thank you!");
 
                       }
 
@@ -151,53 +194,20 @@ import java.util.InputMismatchException;
 
       class Client{
 
+          String name;
+          static Stack stack;
+
+          Client(String name){
+
+                this.name=name;
+                stack=new Stack();
+                System.out.println("Welcome " + this.name + "!");
+          }
+
            public static void main(String... args){
 
-                Stack stack=new Stack();
-                Client client=new Client();
-                int var=0;
-                String data="";
-                boolean flag=true;
-                Scanner scanner=new Scanner(System.in);
-                String answer;
-
-
-                do{
-                    try{
-                          var=stack.menu();
-                          switch(var){
-
-                                case 1: System.out.println("Enter the element to be pushed!");
-                                        data=scanner.next();
-                                        stack.push(data);
-                                        break;
-
-                                case 2:System.out.println("Element popped: " + stack.pop());
-                                        break;
-
-                                case 3: stack.peek();
-                                        break;
-
-                                default: System.out.println("Invalid choice!");
-                                         break;
-
-                          }
-                    }//try ends
-
-                    catch(Exception misMatch){
-
-                          System.out.println("Exception occured!" + misMatch.getMessage());
-
-                    }//catch ends
-
-                    System.out.println("Do you want to try again?");
-                    answer=scanner.next();
-                    if(answer.equalsIgnoreCase("yes"))
-                          flag=true;
-                    else
-                          flag=false;
-
-                }while(flag);
+                Client client=new Client("Sangeeta");
+                stack.menu();
 
           }//main ends
 
