@@ -1,3 +1,10 @@
+/*
+ *@Description: TThis is to understand the various sorting techniques for a one dimensional array using Java.
+ *@author: Sangeeta Gupta
+ *@date:1st March 2018
+ *@version:1.2
+ */
+
 public class Sort {
     private int number[]={77,33,44,11,88,22,66,55};
     private int count1,count2,key;
