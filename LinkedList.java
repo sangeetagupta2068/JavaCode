@@ -1,3 +1,9 @@
+/*
+ *@Description: This code is used to understand the implementation of a Singly ended Linked List through Java.
+ *@author: Sangeeta Gupta
+ *@date:1st March 2018
+ *@version:1.3
+ */
 class Node{
 
     public int data;
