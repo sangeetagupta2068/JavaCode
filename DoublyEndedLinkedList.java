@@ -1,6 +1,6 @@
 /*
- *@Description: This code is used to understand the implementation of Doubly ended Linked List through Java. Doubly ended Linked List 
-                is a linear linked list wherein every node is linked with the previous and the next node.
+ *@Description: This code is used to understand the implementation of Doubly ended Linked List through Java. Doubly ended Linked 
+                List is a linear linked list wherein every node is linked with the previous and the next node.
  *@author: Sangeeta Gupta
  *@date:1st March 2018
  *@version:1.3
