@@ -1,3 +1,10 @@
+/*
+ *@Description: This code is used to understand the implementation of Circular Linked List through Java. Circular Linked List 
+                is a linear linked list wherein the last node points to the starting node.
+ *@author: Sangeeta Gupta
+ *@date:1st March 2018
+ *@version:1.2
+ */
 
 class CircularNode{
 
